@@ -20,7 +20,7 @@ async function decodeSecretMessage(url) {
       "<p>You can use this link to enable CORS: <a href='https://mybrowseraddon.com/access-control-allow-origin.html' target='_blank' class='info-link'>Access Control Allow Origin</a></p>" +
       "<p>But the below secret message is created through the existing co-ordinates and character provided in the code.</p>";
 
-    let coordinates = finalTestCoordinates; // getting the ore definded coordinates.
+    let coordinates = finalTestCoordinates; // getting the pre definded coordinates.
     coordinates.shift(); // removing first element i.e. the heading from the table x-coordinate, Character and y-coordinate
     coordinates = reverseCoordinatesVertically(coordinates); // Reverse the y-coordinates vertically
     drawTextFromCoordinates(coordinates);
@@ -57,7 +57,7 @@ function drawTextFromCoordinates(coordinates) {
   // Loop through the coordinates array and draw the character at each (x, y)
   coordinates.forEach(({ x, y, character }, index) => {
     // Set the drawing position
-    ctx.fillText(character, x * 10, y * 20 + 40); // Multiply x and y for spacing and letter alignment.
+    ctx.fillText(character, x * 10, y * 30 + 40); // Multiply x and y for spacing and letter alignment.
   });
 }
 
